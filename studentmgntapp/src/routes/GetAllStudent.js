@@ -18,8 +18,9 @@ const GetAllStudents = () => {
         .then((response)=>{
                 // console.log(response.data);
                 setTempdata(response.data);
-                // console.log(tempdata)
+                console.log(tempdata)
                 setData(tempdata);
+                setDeldata([]);
             })
             .catch((error)=>{
                 console.log(error.response);
@@ -34,12 +35,14 @@ const GetAllStudents = () => {
         // eslint-disable-next-line
   },[tempdata]);
 
+  const [deldata,setDeldata] = useState([]);
   const deleteStudent = (Id) =>{
      console.log(Id);
         axios.delete(`http://localhost:8082/student/deleteStudentById/${Id}`)
         .then((response) => {
             console.log(`Student deleted successfully.`)
-            console.log(response.data);
+            setDeldata(response.data);
+            setTempdata(deldata);
         }).catch((error)=>{
             return(
                 "student data not found"
