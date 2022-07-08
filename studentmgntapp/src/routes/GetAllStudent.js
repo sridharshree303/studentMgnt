@@ -8,17 +8,18 @@ import Table from 'react-bootstrap/Table';
 const GetAllStudents = () => {
 
   const [data,setData] = useState([]);
-
+  const [tempdata,setTempdata] = useState([]);
   const navigate = useNavigate()
   
   useEffect(() => {
-       
        async function getResults(){
             
         await axios.get('http://localhost:8082/student/getAllStudents')
         .then((response)=>{
                 // console.log(response.data);
-                setData(response.data);
+                setTempdata(response.data);
+                // console.log(tempdata)
+                setData(tempdata);
             })
             .catch((error)=>{
                 console.log(error.response);
@@ -26,16 +27,13 @@ const GetAllStudents = () => {
         }
         getResults();
         // eslint-disable-next-line
-  },[]);
+  },[tempdata]);
 
   const deleteStudent = (Id) =>{
-    let newData = [...data];
-    let delData = []
      console.log(Id);
         axios.delete(`http://localhost:8082/student/deleteStudentById/${Id}`)
         .then((response) => {
             console.log(`Student deleted successfully.`)
-            delData(response.data);
             console.log(response.data);
         }).catch((error)=>{
             return(
@@ -43,9 +41,6 @@ const GetAllStudents = () => {
             )
         })
      
-        let filterData = newData.filter((item)=> item.id !== Id)
-        console.log(filterData);
-        setData(filterData);
   }
 
   const editStudent = (student) =>{
