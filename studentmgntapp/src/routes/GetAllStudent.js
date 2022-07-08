@@ -13,7 +13,7 @@ const GetAllStudents = () => {
   
   useEffect(() => {
        async function getResults(){
-            
+    if(data.length === 0 || (data.length !== tempdata.length)){
         await axios.get('http://localhost:8082/student/getAllStudents')
         .then((response)=>{
                 // console.log(response.data);
@@ -24,6 +24,11 @@ const GetAllStudents = () => {
             .catch((error)=>{
                 console.log(error.response);
             })
+        }else{
+            return(
+                null
+            )     
+        }
         }
         getResults();
         // eslint-disable-next-line
@@ -78,7 +83,7 @@ const GetAllStudents = () => {
                         <td className="text-capitalize">{student.subject}</td>
                         <td>
                             <button id="button" className='btn btn-primary ' onClick={()=>deleteStudent(student.id)}>Remove</button>&nbsp;&nbsp;&nbsp;
-                            <button id="button" className='btn btn-primary ' onClick={()=>editStudent(student)}>Update</button>
+                            <button id="button" className='btn btn-primary ' onClick={()=>editStudent(student)}>Update</button>&nbsp;&nbsp;&nbsp;
                         </td>
                     </tr>
                     )

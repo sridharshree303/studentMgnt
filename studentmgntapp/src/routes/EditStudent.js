@@ -7,7 +7,7 @@ const EditStudent = ({obj}) => {
 
     let {search} = useLocation();
     let params = new URLSearchParams(search);
-    // console.log(search)
+    // console.log(search);
 
     const [mStudent,setMStudent] = useState({
         id : params.get('id'),
