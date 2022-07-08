@@ -1,0 +1,110 @@
+.App {
+  width: auto;
+  height: auto;
+  min-height: 100vh;
+}
+
+#containerpad{
+  padding:0px 80px 0px 80px;
+}
+
+#collasible-nav-dropdown{ 
+  font-size: x-large;
+}
+
+#Navbar{
+  background-color: rgb(11, 77, 105);
+  
+}
+
+#searchbar{
+  padding: 20px 100px 20px 20px;
+}
+
+#searchicon{
+  color: white;
+  font-size: medium;
+  font-weight: bolder;
+  background-color: rgb(32, 199, 240);
+}
+
+#suces{
+  color: rgb(17, 182, 45);
+  background-color: white;
+}
+
+#failed{
+  color: rgb(203, 20, 20);
+  background-color: white;
+}
+
+#headstyle{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  padding: 10px;
+}
+
+#loginalign{
+  margin-top: 100px;
+}
+
+#homecard{
+  padding: 100px 0px 0px 0px;
+}
+
+#cardbodyh4{
+  padding: 15px 10px 5px 10px;
+  font-style: normal;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+
+}
+
+#cardbodyp{
+  padding: 5px 10px 15px 20px;
+  font-style: italic;
+}
+
+#headercard{
+  font-weight: inherit;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#textdecor{
+  text-decoration: none;
+}
+
+#tablealign{
+  text-align: center;
+  padding: 30px 30px 30px 30px;
+}
+
+#textsize{
+  font-size: larger;
+}
+
+#textsizeheader{
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#addsubmit{
+  padding: 10px 10px 10px 10px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.form-control{
+  padding: 20px;
+  
+  
+}
+
+label{
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+#addcard{
+  margin-top: 50px;
+}
